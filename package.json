@@ -1,0 +1,30 @@
+{
+  "name": "devoir-bilan-cef-trouve-ton-artisan",
+  "version": "1.0.0",
+  "description": "A compléter .",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KayaNC988/Devoir-bilan-CEF-Trouve-ton-artisan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KayaNC988/Devoir-bilan-CEF-Trouve-ton-artisan/issues"
+  },
+  "homepage": "https://github.com/KayaNC988/Devoir-bilan-CEF-Trouve-ton-artisan#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
