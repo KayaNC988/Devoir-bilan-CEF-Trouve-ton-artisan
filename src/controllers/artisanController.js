@@ -11,7 +11,7 @@ exports.getAllArtisans = async (req, res) => {
                 },
             ],
         });
-        if (!artisan) {
+        if (!artisans || artisans.length === 0) {
             return res.status(404).json({ error: "Aucun artisan trouvé." });
         }
 
