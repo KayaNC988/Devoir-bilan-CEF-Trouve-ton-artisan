@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import api from "../services/api";
+
 function Home() {
+
+  const [topArtisans, setTopArtisans] = useState([]);
+
+useEffect(() => {
+    api.get("/artisans/top")
+        .then((response) => {
+            setTopArtisans(response.data);
+        })
+        .catch((error) => {
+            console.error("Erreur chargement des artisans :", error);
+        });
+
+}, []);
+
+
   return (
     <div className="container mt-5">
 
@@ -46,6 +65,33 @@ function Home() {
         </div>
 
       </div>
+      <section id="top-artisans" className="mt-5">
+        <h2 className="mb-4">Nos artisans les mieux notés</h2>
+
+        <div className="row g-4">
+          {topArtisans.map((artisan) => (
+            <div className="col-md-4" key={artisan.id}>
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h3 className="card-title h5">{artisan.name}</h3>
+                  <p className="mb-1">
+                    <strong>Métier : </strong>{artisan.Specialty?.name}
+                  </p>
+                  <p className="mb-1">
+                    <strong>Ville : </strong>{artisan.city}
+                  </p>
+                  <p className="mb-3">
+                    <strong>Note : </strong>{artisan.note}/5
+                  </p>
+                  <Link to={`/artisans/${artisan.id}`} className="btn btn-primary">
+                    Voir le profil
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
     </div>
   );

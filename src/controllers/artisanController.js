@@ -86,3 +86,25 @@ exports.searchArtisans = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+exports.getArtisansByCategory = async (req, res) => {
+    try {
+        const { category } = req.params;
+
+        const artisans = await Artisan.findAll({
+            include: [
+                {
+                    model: Specialty,
+                    include: [Category],
+                    where: {},
+                }
+            ]
+        });
+
+        const filteredArtisans = artisans.filter(artisan => artisan.Specialty.Category.name === category);
+
+        res.status(200).json(filteredArtisans);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};

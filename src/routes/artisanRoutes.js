@@ -6,5 +6,6 @@ router.get('/', artisanController.getAllArtisans);
 router.get('/top', artisanController.getTopArtisans);
 router.get('/search', artisanController.searchArtisans);
 router.get('/:id', artisanController.getArtisanById);
+router.get('/category/:category', artisanController.getArtisansByCategory);
 
 module.exports = router;

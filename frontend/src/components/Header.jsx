@@ -1,41 +1,68 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/Logo.png";
 import api from "../services/api";
 
 function Header() {
   const [categories, setCategories] = useState([]);
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        api.get("/categories")
-            .then((response) => {
-                setCategories(response.data);
-            })
-            .catch((error) => {
-                console.error("Error fetching categories:", error);
-            });
-    }, []);
+  useEffect(() => {
+    api
+      .get("/categories")
+      .then((response) => {
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        console.error("Erreur chargement catégories :", error);
+      });
+  }, []);
 
-    return (
-        <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-                <div className="container">
-                    <Link className="navbar-brand" to="/">Trouve ton artisan</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto">
-                     {       categories.map((category) => (
-                                <li className="nav-item" key={category.id}>
-                                    <Link className="nav-link" to={`/categories/${category.id}/artisans`}>{category.name}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    if (search.trim() !== "") {
+      navigate(`/artisans?name=${search}`);
+      setSearch("");
+    }
+  };
+
+  return (
+    <header className="bg-white border-bottom">
+      <nav className="container d-flex align-items-center justify-content-between py-3">
+        <Link to="/" className="d-flex align-items-center">
+          <img
+            src={logo}
+            alt="Trouve ton artisan"
+            style={{ height: "55px" }}
+          />
+        </Link>
+
+        <div className="d-flex align-items-center gap-4">
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              to={`/artisans?category=${encodeURIComponent(category.name)}`}
+              className="text-decoration-none text-dark"
+            >
+              {category.name}
+            </Link>
+          ))}
+        </div>
+
+        <form onSubmit={handleSearch} className="d-flex">
+          <input
+            type="search"
+            className="form-control"
+            placeholder="Rechercher un artisan"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+          />
+        </form>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;
