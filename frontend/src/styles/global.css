@@ -1,3 +1,40 @@
 :root {
-    --primary-color: #007bff;
+    --color-light: #f1f8fc;
+    --color-blue: #0074c7;
+    --color-dark-blue: #00497c;
+    --color-dark: #384050;
+    --color-red: #cd2c2e;
+    --color-green: #82b864;
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-dark-blue);
+    border-color: var(--color-dark-blue);
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(56, 64, 80, 0.12);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.25s ease;
 }
