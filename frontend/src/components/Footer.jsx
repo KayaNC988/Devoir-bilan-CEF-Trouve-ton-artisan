@@ -57,7 +57,7 @@ function Footer() {
 
                         <hr />
 
-                        <p classname="text-center mb-0">
+                        <p className="text-center mb-0">
                         © 2026 Trrouve ton artisan - Région Auvergne-Rhône-Alpes - Tous droits réservés
                         </p>
                     </div>

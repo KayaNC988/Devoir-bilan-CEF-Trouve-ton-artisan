@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
 import api from "../services/api";
+import "../styles/header.css";
 
 function Header() {
   const [categories, setCategories] = useState([]);
@@ -29,32 +30,31 @@ function Header() {
   };
 
   return (
-    <header className="bg-white border-bottom">
-      <nav className="container d-flex align-items-center justify-content-between py-3">
-        <Link to="/" className="d-flex align-items-center">
+    <header className="site-header">
+      <nav className="header-container">
+        <Link to="/" className="header-logo">
           <img
             src={logo}
             alt="Trouve ton artisan"
-            style={{ height: "55px" }}
+            style={{ height: "95px" }}
           />
         </Link>
 
-        <div className="d-flex align-items-center gap-4">
+        <div className="header-nav">
           {categories.map((category) => (
             <Link
               key={category.id}
               to={`/artisans?category=${encodeURIComponent(category.name)}`}
-              className="text-decoration-none text-dark"
+              className="header-link"
             >
               {category.name}
             </Link>
           ))}
         </div>
 
-        <form onSubmit={handleSearch} className="d-flex">
+        <form onSubmit={handleSearch} className="header-search">
           <input
             type="search"
-            className="form-control"
             placeholder="Rechercher un artisan"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
