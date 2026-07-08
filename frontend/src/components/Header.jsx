@@ -36,7 +36,6 @@ function Header() {
           <img
             src={logo}
             alt="Trouve ton artisan"
-            style={{ height: "95px" }}
           />
         </Link>
 

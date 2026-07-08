@@ -10,16 +10,16 @@
 
 .header-container{
   max-width: 1300px;
-  margin: auto;
-  padding: 25px 35px;
+  margin: 0 auto;
+  padding: 18px 40px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:40px;
+  gap:35px;
 }
 
 .header-logo img{
-  height:55px;
+  height: 95px;
   width:auto;
   transition:.3s;
 }
@@ -32,14 +32,14 @@
   flex:1;
   display:flex;
   justify-content:center;
-  gap:32px;
+  gap:45px;
 }
 
 .header-link{
   color:#00497c;
   text-decoration:none;
   font-weight:700;
-  font-size:16px;
+  font-size:17px;
   letter-spacing:0.3px;
   padding:10px 0;
   position:relative;
@@ -71,7 +71,7 @@
 }
 
 .header-search input{
-  width:260px;
+  width:290px;
   height: 45px;
   padding:11px 18px;
   border:2px solid #82b864;

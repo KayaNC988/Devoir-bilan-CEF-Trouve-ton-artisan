@@ -1,0 +1,118 @@
+.hero-title {
+    color: #384050;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    color: #384050;
+    opacity: 0.75;
+    font-size: 20px;
+}
+
+.section-title {
+    color: #00497c;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #0074c7;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.step-card {
+    min-height: 190px;
+    padding: 2rem 1rem;
+    border: none;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 116, 199, 0.12);
+}
+
+.step-card h1 {
+    color: #384050;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    color: #384050;
+    opacity: 0.8;
+    margin: 0;
+}
+
+#top-artisans {
+    margin-top: 70px;
+}
+
+#top-artisans .card {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#top-artisans .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 116, 199, 0.15);
+}
+
+#top-artisans .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.8rem;
+}
+
+#top-artisans h3 {
+    color: #0074c7;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#top-artisans p {
+    color: #384050;
+    margin-bottom: 8px;
+}
+
+#top-artisans strong {
+    color: #384050;
+}
+
+.artisan-rating {
+    color: #384050;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#top-artisans .btn {
+    background: #0074c7;
+    border: none;
+    transition: 0.3s;
+    align-self: flex-start;
+    border-radius: 25px;
+    font-size: 15px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+#top-artisans .btn:hover {
+    background: #00497c;
+}
