@@ -1,0 +1,55 @@
+.artisans-list-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.artisans-list-title {
+  color: #00497c;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.artisan-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.artisan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 73, 124, 0.18);
+}
+
+.artisan-card .card-body {
+  padding: 1.5rem;
+}
+
+.artisan-card .card-title {
+  color: #00497c;
+  font-weight: 700;
+}
+
+.artisan-card p {
+  color: #384050;
+}
+
+.artisan-card-btn {
+  display: inline-block;
+  background-color: #00497c;
+  color: white;
+  text-decoration: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.artisan-card-btn:hover {
+  background-color: #0074c7;
+  color: white;
+  transform: translateY(-2px);
+}
+
