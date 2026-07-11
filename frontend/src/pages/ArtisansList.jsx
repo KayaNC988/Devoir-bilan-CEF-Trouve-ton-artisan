@@ -11,6 +11,11 @@ function ArtisansList() {
   
   const category = searchParams.get("category");
 
+  useEffect(() =>{   
+setName(searchParams.get("name") || "");
+setCity(searchParams.get("city") || "");
+}, [searchParams]);
+
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -47,8 +52,8 @@ function ArtisansList() {
         <main className="artisans-list-page">
             <h1 className="artisans-list-title">Nos artisans</h1>
 
-            <form onSubmit={handleSearch} className="g-3 mb-4">
-                <div className="col mb-5">
+            <form onSubmit={handleSearch} className="row justify-content-center align-items-center g-3 mb-5">
+                <div className="col-12 col-md-4">
                     <input
                         type="text"
                         className="form-control"
@@ -57,7 +62,7 @@ function ArtisansList() {
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
-                <div className="col mb-5">
+                <div className="col-12 col-md-4">
                     <input
                         type="text"
                         className="form-control"
@@ -66,17 +71,17 @@ function ArtisansList() {
                         onChange={(e) => setCity(e.target.value)}
                     />
                 </div>
-                <div className="col-mb-2">
-                    <button type="submit" className="btn btn-primary w-100">
+                <div className="col-12 col-md-auto">
+                    <button type="submit" className="btn btn-primary">
                         Rechercher
                     </button>
                 </div>
             </form>
 
-            <div className="artisan-card card h-100 shadow-sm">
+            <div className="row g-4">
                 {artisans.map((artisan) => (
-                    <div className="col-md-4" key={artisan.id}>
-                        <div className="card h-100 shadow-sm">
+                    <div className="col-12 col-md-6 mb-4" key={artisan.id}>
+                        <div className="artisans-card card h-100 shadow-sm">
                             <div className="card-body">
                                 <h2>{artisan.name}</h2>
                                 <p className="mb-1">

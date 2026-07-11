@@ -4,6 +4,24 @@
   padding: 3rem 1rem;
 }
 
+.artisans-list-page form {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artisans-list-page .form-control {
+  height: 48px;
+  border-radius: 8px;
+}
+
+.search-button {
+  padding: 10px 28px;
+  border-radius: 25px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
 .artisans-list-title {
   color: #00497c;
   font-weight: 800;
@@ -14,13 +32,13 @@
 .artisan-card {
   border: none;
   border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
 }
 
 .artisan-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 73, 124, 0.18);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .artisan-card .card-body {

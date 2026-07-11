@@ -1,24 +1,62 @@
-
-.footer {
-    background-color: #384050;
-    color: white;
-    margin-top: 50px;
+.site-footer {
+  background-color: #1f2a44;
+  color: #ffffff;
+  margin-top: 3rem;
+  padding: 2.5rem 1.5rem 1rem;
 }
 
-.footer h5{
-    color: #82b864;
-    margin-bottom: 20px;
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 3rem;
 }
 
-.footer a {
-    color: white;
-    text-decoration: none;
+.footer-section h3 {
+  color: #b7d36b;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.footer a:hover {
-    color: #0074c7;
+.footer-section p {
+  margin: 0.25rem 0;
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
 }
 
-.footer hr {
-    border-color: rgba(255,255,255,0.2);
+.footer-phone {
+    margin-top: 0.8rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #b7d36b;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }

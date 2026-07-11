@@ -6,6 +6,7 @@ import "../styles/home.css";
 function Home() {
 
   const [topArtisans, setTopArtisans] = useState([]);
+  
 
 useEffect(() => {
     api.get("/artisans/top")
@@ -18,6 +19,7 @@ useEffect(() => {
 
 }, []);
 
+
   return (
     <div className="container mt-5">
 
@@ -29,7 +31,13 @@ useEffect(() => {
         La plateforme qui vous permet de trouver facilement un artisan
         qualifié dans votre région.
       </p>
-
+       
+       <div className="text-center">
+      <Link to="/artisans" className="btn-artisans">
+      Voir tout les artisans
+      </Link>
+      </div>
+ 
       <hr className="my-5" />
 
       <h2 className="section-title">Comment trouver mon artisan ?</h2>

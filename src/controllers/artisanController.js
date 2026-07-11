@@ -60,31 +60,47 @@ exports.getArtisanById = async (req, res) => {
 };
 
 exports.searchArtisans = async (req, res) => {
-    try {
-        const { name, city } = req.query;
-        const where = {};
+  try {
+    const { name = "", city = "" } = req.query;
 
-        if (name) {
-            where.name = { [Op.like]: `%${name}%` };
-        }
-        if (city) {
-            where.city = { [Op.like]: `%${city}%` };
-        }
+    const where = {};
 
-        const artisans = await Artisan.findAll({ 
-            where,
-            include: [
-                {
-                    model: Specialty,
-                    include: [Category],
-                },
-            ],
-        });
-        
-        res.status(200).json(artisans);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    if (city.trim()) {
+      where.city = {
+        [Op.like]: `%${city.trim()}%`,
+      };
     }
+
+    const artisans = await Artisan.findAll({
+      where,
+      include: [
+        {
+          model: Specialty,
+          include: [Category],
+        },
+      ],
+    });
+
+    const searchedName = name.trim().toLowerCase();
+
+    const filteredArtisans = searchedName
+      ? artisans.filter((artisan) => {
+          const artisanName = artisan.name?.toLowerCase() || "";
+          const specialtyName =
+            artisan.Specialty?.name?.toLowerCase() || "";
+
+          return (
+            artisanName.includes(searchedName) ||
+            specialtyName.includes(searchedName)
+          );
+        })
+      : artisans;
+
+    res.status(200).json(filteredArtisans);
+  } catch (error) {
+    console.error("Erreur recherche artisans :", error);
+    res.status(500).json({ error: error.message });
+  }
 };
 
 exports.getArtisansByCategory = async (req, res) => {

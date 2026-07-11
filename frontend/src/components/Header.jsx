@@ -23,8 +23,10 @@ function Header() {
   const handleSearch = (event) => {
     event.preventDefault();
 
+    const searchValue = search.trim();
+
     if (search.trim() !== "") {
-      navigate(`/artisans?name=${search}`);
+      navigate(`/artisans?name=${encodeURIComponent(search.trim())}`);
       setSearch("");
     }
   };
