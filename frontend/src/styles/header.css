@@ -85,3 +85,74 @@
   box-shadow:0 0 10px rgba(0,116,199,.15);
 }
 
+/* Tablette */
+@media (max-width: 992px) {
+  .header-container {
+    padding: 16px 24px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .header-logo img {
+    height: 80px;
+  }
+
+  .header-nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .header-search input {
+    width: 240px;
+  }
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+  .site-header {
+    position: static;
+  }
+
+  .header-container {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 16px;
+  }
+
+  .header-logo img {
+    height: 70px;
+  }
+
+  .header-nav {
+    order: initial;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 16px;
+  }
+
+  .header-link {
+    font-size: 15px;
+    text-align: center;
+    padding: 8px 4px;
+  }
+
+  .header-search {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header-search input {
+    width: 100%;
+    max-width: 360px;
+    height: 42px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+  
+

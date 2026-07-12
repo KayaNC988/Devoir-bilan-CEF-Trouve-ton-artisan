@@ -15,12 +15,6 @@
   border-radius: 8px;
 }
 
-.search-button {
-  padding: 10px 28px;
-  border-radius: 25px;
-  white-space: nowrap;
-  font-weight: 600;
-}
 
 .artisans-list-title {
   color: #00497c;
@@ -44,6 +38,7 @@
 .artisan-card .card-body {
   padding: 1.5rem;
 }
+
 
 .artisan-card .card-title {
   color: #00497c;
@@ -71,3 +66,95 @@
   transform: translateY(-2px);
 }
 
+/* TABLETTE */
+
+@media (max-width: 992px) {
+  .artisans-list-page {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .artisans-list-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .artisans-list-page form {
+    max-width: 760px;
+  }
+
+  .artisans-list-page .form-control {
+    height: 46px;
+  }
+
+  .search-button,
+  .artisans-list-page form .btn {
+    padding: 10px 24px;
+    white-space: nowrap;
+  }
+
+  .artisan-card .card-body {
+    padding: 1.35rem;
+  }
+
+  .artisan-card h2 {
+    font-size: 1.45rem;
+  }
+}
+
+/* TELEPHONE */
+
+@media (max-width: 768px) {
+  .artisans-list-page {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .artisans-list-title {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artisans-list-page form {
+    gap: 0.85rem;
+    margin-bottom: 2rem !important;
+  }
+
+  .artisans-list-page form > div {
+    width: 100%;
+  }
+
+  .artisans-list-page .form-control {
+    width: 100%;
+    height: 44px;
+  }
+
+  .search-button,
+  .artisans-list-page form .btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .artisan-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .artisan-card .card-body {
+    padding: 1.2rem;
+  }
+
+  .artisan-card h2 {
+    font-size: 1.35rem;
+  }
+
+  .artisan-card p {
+    font-size: 0.95rem;
+  }
+
+  .artisan-card-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}

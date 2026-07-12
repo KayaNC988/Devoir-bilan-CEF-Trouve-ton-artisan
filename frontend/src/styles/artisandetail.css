@@ -3,6 +3,20 @@
   background-color: #f7f8fa;
 }
 
+.artisan-image {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.artisan-detail-image {
+  width: 100%;
+  max-width: 380px;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
 .artisan-detail-card {
   max-width: 900px;
   margin: 0 auto;
@@ -33,6 +47,19 @@
   margin: 1.75rem 0 1.25rem;
   color: #384050;
   font-size: 2.2rem;
+}
+
+.artisan-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #f5c518;
+  font-size: 1.2rem;
 }
 
 .artisan-detail-infos {
@@ -74,4 +101,103 @@
 
 .artisan-detail-contact a:hover {
   text-decoration: underline;
+}
+
+.contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.contact-section h2 {
+    color: #00497c;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+    max-width: 700px;
+}
+
+.contact-form .form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.contact-btn {
+    background: #0074c7;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.contact-btn:hover {
+    background: #00497c;
+}
+
+/* Tablette */
+
+@media (max-width: 992px) {
+
+.artisan-detail {
+    padding: 2rem 1.5rem;
+}
+
+.artisan-title {
+    font-size: 2.3rem;
+}
+
+.artisan-info {
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+}
+
+/* TELEPHONE */
+
+@media (max-width: 768px) {
+
+.artisan-detail {
+    padding: 1.5rem 1rem;
+}
+
+.artisaan-detai-image {
+  max-width: 260px;
+  height: 180px;
+}
+
+.artisan-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.artisan-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.artisan-description {
+    text-align: center;
+}
+
+.back-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-section {
+  margin-top: 2rem;
+}
+
+.contact-btn {
+  width: 100%;
+}
+
 }

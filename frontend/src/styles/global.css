@@ -38,3 +38,19 @@ h1, h2, h3, h4, h5 {
     transform: translateY(-5px);
     transition: 0.25s ease;
 }
+
+.artisan-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.stars svg {
+    color: #f5c518;
+    font-size: 1.1rem;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import StarRating from "../components/StarRating";
 import api from "../services/api";
 import "../styles/artisanslist.css";
 
@@ -91,7 +92,7 @@ setCity(searchParams.get("city") || "");
                                     <strong>Ville : </strong>{artisan.city}
                                 </p>
                                 <p className="mb-3">
-                                    <strong>Note : </strong>{artisan.note}/5
+                                     <StarRating note={artisan.note} />
                                 </p>
 
                                 <Link to={`/artisans/${artisan.id}`} className="artisan-card-btn">

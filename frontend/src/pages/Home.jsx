@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import StarRating from "../components/StarRating";
 import api from "../services/api";
 import "../styles/home.css";
 
@@ -89,7 +90,7 @@ useEffect(() => {
                     <strong>Ville : </strong>{artisan.city}
                   </p>
                   <p className="artisan-rating">
-                    <strong>Note : </strong>{artisan.note}/5
+                     <StarRating note={artisan.note} />
                   </p>
                   <Link to={`/artisans/${artisan.id}`} className="btn btn-primary">
                     Voir le profil
